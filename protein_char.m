@@ -7,7 +7,7 @@ pK1s_carbonyl = containers.Map(["G","A","V","L","I","M","P","F","W","K","R","H",
 pK2s_amino_group = containers.Map(["G","A","V","L","I","M","P","F","W","K","R","H","S","T","N","Q","Y","C","D","E"], [9.78,9.87,9.74,9.74,9.76,9.28,10.54,9.31,9.41,9.06,8.99,9.33,9.21,9.10,8.72,9.13,9.21,10.70,9.90,9.47]);    
 new_AA1 = char(AA1);
 for i = 1:length(AA1)
-    doesExist = isKey(pK1s_carbonyl,AA1(i));
+    doesExist = isKey(pK1s_carbonyl,new_AA1(i));
     if not(doesExist)
         AA1_info = "One or more of your amino acid sequences contains at least one invalid amino acid";
         AA2_info = "";
@@ -16,7 +16,7 @@ for i = 1:length(AA1)
 end
 new_AA2 = char(AA2);
 for i = 1:length(AA2)
-    doesExist = isKey(pK1s_carbonyl,AA2(i));
+    doesExist = isKey(pK1s_carbonyl,new_AA2(i));
     if not(doesExist)
         AA2_info = "One or more of your amino acid sequences contains at least one invalid amino acid";
         AA1_info = "";
