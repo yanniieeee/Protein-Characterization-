@@ -1,4 +1,4 @@
-function [AA1_info, AA2_info] = protein_char(pH, AA1, AA2)
+function [AA1_info, AA2_info, statement] = protein_char(pH, AA1, AA2)
 pKRs = containers.Map(["K", "R", "H", "D", "E", "Y", "C"], [10.54, 12.48,6.04,3.90,4.07,10.46,8.37]);
 pKRs_charge_below = containers.Map(["K", "R", "H", "D", "E", "Y", "C"], [1,1,1,0,0,0,0]);
 pKRs_charge_equal = containers.Map(["K", "R", "H", "D", "E", "Y", "C"], [-1/2,-1/2,1/2,-1/2,-1/2,-1.5,-1/2]);
@@ -24,6 +24,7 @@ for i = 1:length(AA2)
     end
 end
 AA1_charge = charge_calc(pH,AA1);
+AA1_charge_number = AA1_charge; 
     if AA1_charge > 0
         AA1_charge = strcat("+", string(AA1_charge), ". ");
     else
@@ -31,6 +32,7 @@ AA1_charge = charge_calc(pH,AA1);
     end 
     
     AA2_charge = charge_calc(pH,AA2);
+    AA2_charge_number = charge_calc(pH, AA2);
     if AA2_charge > 0
         AA2_charge = strcat("+", string(AA2_charge),". ");
     else
@@ -52,16 +54,20 @@ AA1_charge = charge_calc(pH,AA1);
     end
     
     
-    AA1_info = strcat("The overall charge of amino acid ", AA1, " at pH ", string(pH),...
+    AA1_info = "AA1 info:";
+    AA1_info = AA1_info +newline + strcat("The overall charge of amino acid ", AA1, " at pH ", string(pH),...
     " is ", AA1_charge); 
     AA1_info = AA1_info + newline + strcat("The pI of amino acid ", AA1, " is ",  string(AA1_pI), ". ");
     AA1_info = AA1_info + newline + strcat("Amino acid ", AA1, " will move toward the ", elec_end1);
-
-    AA2_info = strcat("The overall charge of amino acid ", AA2, " at pH ", string(pH), ...
+    
+    AA2_info = "AA2 info:";
+    AA2_info = AA2_info + newline + strcat("The overall charge of amino acid ", AA2, " at pH ", string(pH), ...
     " is ", AA2_charge);
     AA2_info = AA2_info + newline + strcat("The pI of amino acid ", AA2, " is ",  string(AA2_pI), ". ");
     AA2_info = AA2_info + newline + strcat("Amino acid ", AA2, " will move toward the ", elec_end2);
 
-    cathode_anode_gen(AA1_pI,AA2_pI);
+    statement = ion_exchanger(AA1_charge_number, AA2_charge_number, AA1, AA2);
+    cathode_anode_gen(AA1, AA2, AA1_pI,AA2_pI, AA1_info, AA2_info, statement);
+    
     
 end 
