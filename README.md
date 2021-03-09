@@ -34,3 +34,5 @@ input:
 [AA1_info, AA2_info, statement] = protein_char(2, "KRGAVEYCP", "KRHHSTIMP")
 
 output: (see above)
+![image](https://user-images.githubusercontent.com/79676714/110406240-c3699d00-8036-11eb-81c3-b0c8ea00da68.png)
+
