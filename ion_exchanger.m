@@ -1,6 +1,6 @@
-function [statement] = ion_exchanger(AA1_charge, AA2_charge, AA1, AA2)
+% tells the user which ion exchange method to use to separate the two inputted amino acid sequences 
 
-% ion_exchanger() is a function that tells the user which ion exchange method to use to separate the two inputted amino acid sequences 
+function [statement] = ion_exchanger(AA1_charge, AA2_charge, AA1, AA2)
 
 % assigning exchange method and eluted amino acids to different conditions of amino acid sequence charge combinations
     if ((AA1_charge > 0 && AA2_charge >0) || (AA1_charge < 0 && AA2_charge < 0) || (AA1_charge == AA2_charge))    
