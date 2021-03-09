@@ -6,6 +6,11 @@ pKRs_charge_above = containers.Map(["K", "R", "H", "D", "E", "Y", "C"], [0,0,0,-
 pK1s_carbonyl = containers.Map(["G","A","V","L","I","M","P","F","W","K","R","H","S","T","N","Q","Y","C","D","E"],[2.35,2.35,2.29,2.33,2.32,2.13,1.95,2.20,2.46,2.16,1.82,1.80,2.19,2.09,2.14,2.17,2.20,1.92,1.99,2.10]);
 pK2s_amino_group = containers.Map(["G","A","V","L","I","M","P","F","W","K","R","H","S","T","N","Q","Y","C","D","E"], [9.78,9.87,9.74,9.74,9.76,9.28,10.54,9.31,9.41,9.06,8.99,9.33,9.21,9.10,8.72,9.13,9.21,10.70,9.90,9.47]);    
 new_AA1 = char(AA1);
+if not(pH>=0 && pH <=14)
+    AA1_info = "Your pH is in the invalid range";
+    return;
+end
+    
 for i = 1:length(AA1)
     doesExist = isKey(pK1s_carbonyl,new_AA1(i));
     if not(doesExist)
