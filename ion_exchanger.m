@@ -1,5 +1,8 @@
 function [statement] = ion_exchanger(AA1_charge, AA2_charge, AA1, AA2)
-    
+
+% ion_exchanger() is a function that tells the user which ion exchange method to use to separate the two inputted amino acid sequences 
+
+% assigning exchange method and eluted amino acids to different conditions of amino acid sequence charge combinations
     if ((AA1_charge > 0 && AA2_charge >0) || (AA1_charge < 0 && AA2_charge < 0) || (AA1_charge == AA2_charge))    
         statement = strcat(AA1, " and ", AA2, " cannot be separated by either a cation or anion exchanger.");
         return
@@ -33,6 +36,8 @@ function [statement] = ion_exchanger(AA1_charge, AA2_charge, AA1, AA2)
             x = strcat(" in a cation exchanger. ", AA1, " will elute first in an anion exchanger.");
         end
     end
+    
+    % takes the variables assigned in the if/else statement above and concatenates them into a statement about the optimal exchange method  
     statement = strcat("You can separate ", AA1, " and ", AA2, " using a(n) ", method, " exchanger. ")
     statement = statement + newline + strcat(AA_elute1, " will elute first", x);
     
