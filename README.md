@@ -1,3 +1,6 @@
+
+https://user-images.githubusercontent.com/79676714/110406009-5e15ac00-8036-11eb-98b7-99481fad032e.mov
+
 # Determining Protein Separation Method and Isoelectric Points
 
 Our project plans to make protein characterization easier when given a pH and 2 amino acid sequences. The program tells the user how to separate the proteins 
