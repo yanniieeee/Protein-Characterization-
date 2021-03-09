@@ -1,3 +1,6 @@
+%Main function of our project: takes in a pH and 2 amino acid sequences and generates an animation of how the 
+%amino acids would separate on a cathode anode electrophoresis gel and text that describes the isoelectric points,
+% charge in the given pH, and how the proteins can be separated using an ion exchanger. 
 function [AA1_info, AA2_info, statement] = protein_char(pH, AA1, AA2)
 %Defining the pKas and charges of the amino acid sequences in dictionary format
 pKRs = containers.Map(["K", "R", "H", "D", "E", "Y", "C"], [10.54, 12.48,6.04,3.90,4.07,10.46,8.37]);
@@ -76,11 +79,11 @@ AA1_charge_number = AA1_charge;
     " is ", AA2_charge);
     AA2_info = AA2_info + newline + strcat("The pI of amino acid ", AA2, " is ",  string(AA2_pI), ". ");
     AA2_info = AA2_info + newline + strcat("Amino acid ", AA2, " will move toward the ", elec_end2);
-    % Generating an image that shows the separation of the amino acids on the cathode and anode 
-    % and text that describes the isoelectric point, charge, and tendency to move towards cathode 
-    % or anode. 
-
+    %Defining how the two amino acids would move if an ion exchanger was used to separate the amino acids
     statement = ion_exchanger(AA1_charge_number, AA2_charge_number, AA1, AA2);
+    % Generating an image that shows the separation of the amino acids on the cathode and anode 
+    % and text that describes the isoelectric point, charge, and how to separate the amino acids with 
+    % an ion exchanger. 
     cathode_anode_gen(AA1, AA2, AA1_pI,AA2_pI, AA1_info, AA2_info, statement);
     
     
