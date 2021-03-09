@@ -11,20 +11,22 @@ if not(pH>=0 && pH <=14)
     return;
 end
     
-for i = 1:length(AA1)
+for i = 1:length(new_AA1)
     doesExist = isKey(pK1s_carbonyl,new_AA1(i));
     if not(doesExist)
         AA1_info = "One or more of your amino acid sequences contains at least one invalid amino acid";
         AA2_info = "";
+        statement = "";
         return;
     end
 end
 new_AA2 = char(AA2);
-for i = 1:length(AA2)
+for i = 1:length(new_AA2)
     doesExist = isKey(pK1s_carbonyl,new_AA2(i));
     if not(doesExist)
         AA2_info = "One or more of your amino acid sequences contains at least one invalid amino acid";
         AA1_info = "";
+        statement = "";
         return;
     end
 end
