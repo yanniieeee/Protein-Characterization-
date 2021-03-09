@@ -33,7 +33,7 @@ EXAMPLE:
 input: 
 [AA1_info, AA2_info, statement] = protein_char(2, "KRGAVEYCP", "KRHHSTIMP")
 
-output: (see above)
+output:
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/79676714/110545110-7989c100-80e1-11eb-85bb-46b70162962c.gif)
 
 
