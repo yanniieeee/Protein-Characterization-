@@ -1,4 +1,4 @@
-# Protein-Characterization- 
+# Protein-Characterization 
 
 Our project plans to make protein characterization easier when given a pH and 2 amino acid sequences. The program tells the user how to separate the proteins 
 and its charge properties under a given pH. Our main function, protein_char, takes in 3 inputs: pH and 2 amino acid sequences in the one lettered abbreviation form (i.e. AAA, AUGYKW) of any length. 
