@@ -1,6 +1,6 @@
-function pI = pI_calc(AA)
+% calculates the pI (isoelectric point) of the given amino acid sequence
 
-% pI_calc is a function that calculates the pI (isoelectric point) of the given amino acid sequence
+function pI = pI_calc(AA)
 
 % Defining amino acids and their pK1s, pKRs, and PK2s in a dictionary
 pKRs = containers.Map(["K", "R", "H", "D", "E", "Y", "C"], [10.54, 12.48,6.04,3.90,4.07,10.46,8.37]);
