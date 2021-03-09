@@ -3,6 +3,8 @@
 Our project plans to make protein characterization easier when given a pH and 2 amino acid sequences. The program tells the user how to separate the proteins 
 and its charge properties using two methods, either under the given pH or at neutral (i.e. physiological) pH. Our main function, protein_char, takes in 3 inputs: pH (in range of 0-14) and 2 amino acid sequences in the one lettered abbreviation form (i.e. AAA, AUGYKW) of any length. 
 
+In order to filter out invalid inputs, our function is able to recognize if the pH is in between 0-14 inclusively and whether or not the amino acid sequences contain invalid amino acid abbreviations. If an invalid pH is inputted, our function will return “Your pH is in the invalid range”. If an amino acid sequence contains an invalid amino acid abbreviation, our function will return: “One or more of your amino acid sequences contains at least one invalid amino acid”.
+
 The output of protein_char generates information about 2 ways to separate amino acids: an ion exchanger, and a cathode-anode electrophoresis gel.   
 
 For the ion exchanger:
