@@ -1,3 +1,4 @@
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/79666077/111218836-818baa00-8594-11eb-9d9e-73a4a9925de8.gif)
 
 https://user-images.githubusercontent.com/79676714/110406009-5e15ac00-8036-11eb-98b7-99481fad032e.mov
 
@@ -34,4 +35,5 @@ input:
 [AA1_info, AA2_info, statement] = protein_char(2, "KRGAVEYCP", "KRHHSTIMP")
 
 output:
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/79666077/111218487-04f8cb80-8594-11eb-8a6f-9d611900ba18.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/79666077/111218849-86505e00-8594-11eb-8370-8ca9413e85f6.gif)
+
